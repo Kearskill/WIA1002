@@ -17,3 +17,29 @@ variable. The new balance is returned as the value of the method.
 than or equal to the balance and if so, decreases the balance by the value of the
 parameter and returns true; otherwise, it leaves the balance unchanged and returns
 false.*/
+
+interface Account {
+    int deposit(int money);
+    boolean withdraw(int money);
+}
+
+class BankAccount implements Account {
+    private int balance;
+
+    public BankAccount(int balance){
+        this.balance = balance;
+    }
+
+    public int deposit(int deposit_money){
+        balance += deposit_money;
+        return balance;
+    }
+    public boolean withdraw(int withdraw_money){
+        if(balance >=withdraw_money ){ //if balance more than to be withdrawed
+            balance -= withdraw_money;
+            return true;
+        } else{
+            return false;
+        }
+    }
+}
