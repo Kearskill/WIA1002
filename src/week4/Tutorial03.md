@@ -184,6 +184,20 @@ postcondition, parameters using javadoc-style comments:
 - Returns the cost of installing this bid's AC.
 - Returns the yearly cost of operating this bid's AC.
 
+```java
+package week4;
+
+public interface BidInterface {
+    public String getName();
+    public String getDescription();
+    public double getCapacity(double btu);
+    public double getSeer();
+    public double getAcCost();
+    public double getInstallCost();
+    public double getOperatingCost();
+}
+```
+
 Then design another ADT to represent a collection of bids. The second ADT should include
 methods to search for bids based on price and performance. Also note that a single company could
 make multiple bids, each with a different unit. Write a Java interface named
@@ -198,5 +212,14 @@ as the unit cost plus the installation cost.
 - Sees whether this collection is empty.
 
 ```java
+package week4;
 
+public interface BidCollectionInterface {
+    public void addBid();
+    public double getBestYearlyCost();
+    public double getBestInitialCost();
+    public void clearAllItems();
+    public int getNumberOfItems();
+    public boolean isEmpty();
+}
 ```
