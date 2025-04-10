@@ -1,7 +1,5 @@
-**<ins>Lab: ADTs and Bags</ins>**  
-**Question 1**  
-Given the interface BagInterface below:  
-```java
+package week4;
+
 /**
  An interface that describes the operations of a bag of objects.
  */
@@ -50,29 +48,3 @@ public interface BagInterface<T> {
      @return a newly allocated array of all the entries in the bag */
     public T[] toArray();
 } // end BagInterface
-```
-Write an ArrayBag class that implement the BagInterface, as shown in the UML diagram
-below. Set the DEFAULT_CAPACITY to 25.  
-```
-+--------------------------------------+
-| ArrayBag                             |
-+--------------------------------------+
-| -bag: T[]                            |
-| -DEFAULT_CAPACITY: integer           |
-| -numberOfEntries: integer            |
-+--------------------------------------+
-| +getCurrentSize(): integer           |
-| +isFull(): boolean                   |
-| +isEmpty(): boolean                  |
-| +add(newEntry: T): boolean           |
-| +remove(): T                         |
-| +remove(anEntry: T): boolean         |
-| +clear(): void                       |
-| +getFrequencyOf(anEntry: T): integer |
-| +contains(anEntry: T): boolean       |
-| +toArray(): T[]                      |
-+--------------------------------------+
-```
-```java
-
-```
