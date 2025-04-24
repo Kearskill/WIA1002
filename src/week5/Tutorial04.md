@@ -63,6 +63,18 @@ if (head == null) {
 }
 ```
 
+```java
+public void addFirst(Character c){
+    Node<Character> firstNode = new Node<Character>('b');
+    firstNode.next = head;
+    head = firstNode;
+    size++;
+    if(tail==null){
+        tail = head;
+    }
+}
+```
+
 h) Repeat (d) – (f), for the following operations :  
 i. addLast() – value of element, c
 ```text
@@ -138,7 +150,7 @@ if (index == 0) {
 **Question 2**  
 Given is a method containing incorrect statements that checks if an element is in a list
 
-```
+```java
 public void operationX(E e) {
     pointerB.next = pointerB;
 
@@ -174,24 +186,24 @@ public boolean contains(E e) {
 
 **Question 3**  
 Given the following nodes. Answer the following:
-###### imagine a picture here  
+![Nodes](q3_t4.png)<br>
 a) Based on the above figure, what is the name of the method for above operation?  
-`addLast(), since it iterate until the end of the nodes, to find the last node.`
+`removeLast(), since it iterate until the end of the nodes, to find the last node. And gray out the last part`
 
 b) Write codes to represent the above figure. (Kindly use the variables stated in the
 figure)  
 ```java
-// Assume Node<E> is already defined and we’re using Characters as an example
-Node<Character> head = new Node<>('a');
-Node<Character> pointer1 = head;
+public E removeLast() {
+    Node<E> pointer1 = head;
+    for (int i = 0; i < size - 2; i++) {
+        pointer1 = pointer1.next;
+    }
 
-Node<Character> tail = new Node<>('b');
-pointer1.next = tail;
-
-tail.next = null;
-
-// Optional third node (not connected)
-Node<Character> temp = new Node<>('c');
-temp.next = null;
+    Node<E> temp = tail;
+    tail = pointer1;
+    tail.next = null;
+    size--;
+    return temp.element;
+}
 ```
 
