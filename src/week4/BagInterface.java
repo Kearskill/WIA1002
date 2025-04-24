@@ -47,4 +47,9 @@ public interface BagInterface<T> {
     /** Retrieves all entries that are in this bag.
      @return a newly allocated array of all the entries in the bag */
     public T[] toArray();
+
+    /** Returns returns as a new bag the union of the bag receiving the call to the method and the bag that is the method’s one argument.
+     * @param otherbag the second bag to be compared
+     * @return union of the new bag (combined)*/
+    public BagInterface<T> union(BagInterface<T> otherbag);
 } // end BagInterface
