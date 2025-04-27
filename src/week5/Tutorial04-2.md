@@ -66,7 +66,7 @@ Summary: It’s a "replace at index" method for a linked list.
 c) Obviously, there are some bugs in the source code. Debug the code and make it concise and
 simpler.   
 ```java
-public E xyz(int index, E e) {
+public E set(int index, E e) {
     if (index < 0 || index >= size) {  // Proper bounds check
         return null;
     }

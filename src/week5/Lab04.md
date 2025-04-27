@@ -1,8 +1,10 @@
 **<ins>Lab: Linked List</ins>**<br>
 Question 1
+
 1) Write the generic Node class consisting of two components of a node (i.e.:
    element, next), with a default construct and a constructor that accepts an
    item assigned to the initially declared element variable.
+
 ```java
 public class Node<T> {
     // Components of the Node
@@ -25,20 +27,18 @@ public class Node<T> {
 
 2) Write a class called MyLinkedList. The class should have the following :  
    a. Default constructor  
-   b. Nodes for head and tail  
+   b. Nodes for head and tail
+
 ```java
 public class MyLinkedList<T> {
-    // Head and tail nodes
     private Node<T> head;
     private Node<T> tail;
 
-    // Default constructor
     public MyLinkedList() {
         this.head = null;
         this.tail = null;
     }
 
-    // Optional: Getters for head and tail if needed
     public Node<T> getHead() {
         return head;
     }
@@ -46,8 +46,6 @@ public class MyLinkedList<T> {
     public Node<T> getTail() {
         return tail;
     }
-
-    // You can add methods here like add, remove, etc.
 }
 ```
 
@@ -185,20 +183,21 @@ public class MyLinkedList<T> {
     }
 }
 ```
+
 4) Expand the MyLinkedList by implementing the following methods:<br>
 
-| Methods                      | Description |
-|------------------------------|-------------|
-| public boolean contains(E e) | Return true if list contains the element e        |
-| public E get(int index)      | Return element at the specified index         |
-| public E getFirst()          | Return the value of the first item |
-| public E getLast()           | Return the value of the last item |
-| public int indexOf(E e)      | Return the index of the head matching element in this list. Return -1 of no match |
-| public int lastIndexOf(E e)  | Return the index of the last matching element in this list. Return -1 of no match |
-| public E set(int index, E e) |Replace the element at the specified position in this list with the specified element|
-| public void clear()          |Clear the list|
-| public void print()          |Print all the elements in the list|
-| public void reverse()        |Print all elements in reverse order|
+| Methods                      | Description                                                                           |
+|------------------------------|---------------------------------------------------------------------------------------|
+| public boolean contains(E e) | Return true if list contains the element e                                            |
+| public E get(int index)      | Return element at the specified index                                                 |
+| public E getFirst()          | Return the value of the first item                                                    |
+| public E getLast()           | Return the value of the last item                                                     |
+| public int indexOf(E e)      | Return the index of the head matching element in this list. Return -1 of no match     |
+| public int lastIndexOf(E e)  | Return the index of the last matching element in this list. Return -1 of no match     |
+| public E set(int index, E e) | Replace the element at the specified position in this list with the specified element |
+| public void clear()          | Clear the list                                                                        |
+| public void print()          | Print all the elements in the list                                                    |
+| public void reverse()        | Print all elements in reverse order                                                   |
 
 ```java
 public class MyLinkedList<T> {
@@ -306,6 +305,12 @@ public class MyLinkedList<T> {
         System.out.println("null");
     }
 
+    public void reverse1() {
+        for (int i = size; i > 0; i--) {
+            System.out.print(get(i) + " ");
+        }
+    }
+
     private void reverseRecursive(Node<T> node) {
         if (node == null) return;
         reverseRecursive(node.next);
@@ -337,6 +342,7 @@ public class MyLinkedList<T> {
    g. Retrieve the index location for the second and third value.<br>
    h. Checks if the list has the value ‘c’.<br>
    i. Replace the items individually with the following: j,a,v,a.<br>
+
 ```java
 public class TestLinkedList {
     public static void main(String[] args) {
@@ -387,7 +393,6 @@ public class TestLinkedList {
 }
 ```
 
-
 Question 2<br>
 A method called getMiddleValue() returns the value of the middle element of a
 linked list. The method signature is given as follows :<br>
@@ -395,13 +400,14 @@ linked list. The method signature is given as follows :<br>
 public E getMiddleValue()
 
 Write the codes for the getMiddleValue().<br>
+
 ```java
-public class LinkedList<E> {
+public class LinkedList<T> {
     private class Node {
-        E data;
+        T data;
         Node next;
 
-        Node(E data) {
+        Node(T data) {
             this.data = data;
             this.next = null;
         }
@@ -409,25 +415,17 @@ public class LinkedList<E> {
 
     private Node head;
 
-    // Method to return the middle value of the list
-    public E getMiddleValue() {
-        if (head == null) {
-            throw new NoSuchElementException("The list is empty.");
+    public T getMiddleValue1() {
+        Node<T> current = head;
+        int midVal = size / 2;
+        for (int i = 0; i < midVal; i++) {
+            current = current.next;
         }
-
-        Node slow = head;
-        Node fast = head;
-
-        while (fast != null && fast.next != null) {
-            slow = slow.next;         // move by 1
-            fast = fast.next.next;    // move by 2
-        }
-
-        return slow.data;
+        return current.element;
     }
 
     // Optional: method to add elements for testing
-    public void add(E data) {
+    public void add(T data) {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;

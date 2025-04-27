@@ -1,11 +1,18 @@
 package week5;
+public class Node<T> {
+    // Components of the Node
+    public T element;
+    public Node<T> next;
 
-public class Node<E> {
-    E element;
-    Node<E> next;
+    // Default constructor
+    public Node() {
+        this.element = null;
+        this.next = null;
+    }
 
-    public Node(E element){
-        this.element= element;
+    // Constructor that accepts an item
+    public Node(T element) {
+        this.element = element;
         this.next = null;
     }
 }
