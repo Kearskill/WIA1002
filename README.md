@@ -11,11 +11,12 @@ Tutorial/Lab Markdown files
 | Linked List           | [Tutorial 04](src/week5/Tutorial04.md)     | [Lab 04](src/week5/Lab04.md)     |
 | Doubly Linked List    | [Tutorial 04-2](src/week5/Tutorial04-2.md) | [Lab 04-2](src/week5/Lab04-2.md) |
 | Stacks                | [Tutorial 05](src/week6/Tutorial05.md)     | [Lab 05](src/week6/Lab05.md)     |
-| Queues                | N/A                                        | N/A                              |
+| Queues                | [Tutorial 06](src/week7/Tutorial06.md)     | [Lab 06](src/week7/Lab06.md)     |
 | Graph                 | N/A                                        | N/A                              |
 | Recursion             | N/A                                        | N/A                              |
 | Searching and Sorting | N/A                                        | N/A                              |
 | BST                   | N/A                                        | N/A                              |
+
 
 
 <mark style="background-color: lightblue">Marked text</mark>
