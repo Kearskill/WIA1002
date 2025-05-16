@@ -214,11 +214,12 @@ protocol means that of the 150 shares sold, 100 were bought on day 1, 20 were bo
 Write a program that takes as input a sequence of transactions of the form “buy x share(s) at \$y
 each” or “sell x share(s) at \$y each,” assuming that the transactions occur on consecutive days
 and the value x and y are integers. Given this input sequence, the output should be the total
-gain or loss for the sequence, using the FIFO protocol to identify shares.
+gain or loss for the sequence, using the FIFO protocol to identify shares.<br>
 Example Output (Note: the example output is only for your reference purposes; you may solve
 the aforementioned problem with different approaches):
 
 ![Example Output](q3_l6.png)
 
 ```java
+
 ```
