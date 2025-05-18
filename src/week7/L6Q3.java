@@ -2,7 +2,7 @@ package week7;
 
 public class L6Q3 {
     public static void main(String[] args) {
-        System.out.println("Enter your query (In format 'Buy / Sell x shares at \$y each'): ");
+        System.out.println("Enter your query (In format 'Buy / Sell x shares at $y each'): ");
     }
 }
 
