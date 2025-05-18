@@ -2,6 +2,7 @@
 Q1
 a) Create a generic stack called MyStack class using ArrayList. The MyStack generic class
 should implement the following methods :
+
 1) public void push(E 0);
 2) public E pop();
 3) public E peek();
@@ -9,146 +10,110 @@ should implement the following methods :
 5) public boolean isEmpty();
 6) public String toString();
 7) public boolean search(E o);
+
 ```java
+package week6;
+
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 
 public class MyStack<E> {
-    private ArrayList<E> list = new ArrayList<>();
+    ArrayList<E> list = new ArrayList<E>();
 
-    // Pushes an element onto the top of the stack
-    public void push(E o) {
-        list.add(o);
-    }
-
-    // Removes and returns the element at the top of the stack
-    public E pop() {
-        if (isEmpty()) {
-            throw new RuntimeException("Stack is empty");
-        }
-        return list.remove(list.size() - 1);
-    }
-
-    // Returns the element at the top of the stack without removing it
-    public E peek() {
-        if (isEmpty()) {
-            throw new RuntimeException("Stack is empty");
-        }
-        return list.get(list.size() - 1);
-    }
-
-    // Returns the number of elements in the stack
     public int getSize() {
         return list.size();
     }
 
-    // Returns true if the stack is empty
-    public boolean isEmpty() {
+    public void push(E o) { // push is add
+        list.add(o);
+    }
+
+    public E pop() { // pop is remove
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        E o = list.get(getSize() - 1);
+        list.remove(getSize() - 1);
+        return o;
+    }
+
+    public E peek() {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return list.get(getSize() - 1);
+    }
+
+    public Boolean isEmpty() {
         return list.isEmpty();
     }
 
-    // Returns a string representation of the stack
     @Override
     public String toString() {
-        return "Stack: " + list.toString();
+        return "stack " + list.toString();
     }
-
-    // Returns true if the specified element is in the stack
-    public boolean search(E o) {
+    
+   /* public boolean search(E o){
         return list.contains(o);
+    }
+    
+    public int search (E o){
+        if (list.contains(o)){
+            return 1;
+        } else{
+            return 0;
+        }
+    }*/
+
+    public int search(E o) {
+        for (int i = list.size() - 1, pos = 1; i >= 0; i--, pos++) {
+            if (list.get(i).equals(o)) {
+                return pos; // 1-based position from the top
+            }
+        }
+        return -1; // Not found
     }
 }
 ```   
 
-b) Write a test program for Q1(a) called TestMyStack class. Create a stack of type Character from MyStack.
-Following the given order, add elements, a b and c in the stack.
-Print the stack.
+b) Write a test program for Q1(a) called TestMyStack class.<br> Create a stack of type Character from MyStack.<br>
+Following the given order, add elements, a b and c in the stack.<br>
+Print the stack.<br>
 Check if element ‘b’ is in the stack.
 Check if element ‘k’ is in the stack.
+
 ```java
+package week6;
+
 public class TestMyStack {
     public static void main(String[] args) {
-        // Create a stack of type Character
-        MyStack<Character> charStack = new MyStack<>();
+        MyStack<Character> ms = new MyStack<Character>();
+        ms.push('a');
+        ms.push('b');
+        ms.push('c');
+        System.out.println(ms);
 
-        // 1) Add elements a, b and c in the stack (in that order)
-        charStack.push('a');
-        charStack.push('b');
-        charStack.push('c');
+        System.out.println("Value c is at location: "+ ms.search('c'));
+        System.out.println("Does value b exist in stack1: " + ms.search('b'));
+        System.out.println("Does value k exist in stack1: " + ms.search('k'));
 
-        // 2) Print the stack
-        System.out.println("Stack after pushing a, b, c:");
-        System.out.println(charStack);
-
-        // 3) Check if element 'b' is in the stack
-        boolean hasB = charStack.search('b');
-        System.out.println("\nDoes the stack contain 'b'? " + hasB);
-
-        // 4) Check if element 'k' is in the stack
-        boolean hasK = charStack.search('k');
-        System.out.println("Does the stack contain 'k'? " + hasK);
-
-        // Additional operations to demonstrate stack functionality
-        System.out.println("\nCurrent stack size: " + charStack.getSize());
-        System.out.println("Is stack empty? " + charStack.isEmpty());
-        System.out.println("Top element (peek): " + charStack.peek());
-
-        // Pop an element
-        System.out.println("\nPopped element: " + charStack.pop());
-        System.out.println("Stack after pop:");
-        System.out.println(charStack);
+        MyStack<Integer> is = new MyStack<Integer>(); // is  = integer stack
+        is.push(1);
+        is.push(2);
+        is.push(3);
+        System.out.println(is);
+        System.out.println("Does value 6 exist in stack2: " + is.search(6));
     }
 }
+
 ```
 
 c) In the same test program as Q1(b), create a second stack of type integer.
 Following the given order, add elements, 1 2 and 3 in the stack.
 Print the stack.
 Check if element ‘6’ is in the stack.
-```java
-public class TestMyStack {
-    public static void main(String[] args) {
-        // Character stack operations (from part b)
-        System.out.println("Character Stack Operations:");
-        MyStack<Character> charStack = new MyStack<>();
 
-        charStack.push('a');
-        charStack.push('b');
-        charStack.push('c');
-
-        System.out.println("\nStack after pushing a, b, c:");
-        System.out.println(charStack);
-
-        System.out.println("\nDoes the stack contain 'b'? " + charStack.search('b'));
-        System.out.println("Does the stack contain 'k'? " + charStack.search('k'));
-
-        // Integer stack operations (part c)
-        System.out.println("\n\nInteger Stack Operations:");
-        MyStack<Integer> intStack = new MyStack<>();
-
-        // 1) Add elements 1, 2 and 3 in the stack
-        intStack.push(1);
-        intStack.push(2);
-        intStack.push(3);
-
-        // 2) Print the stack
-        System.out.println("\nStack after pushing 1, 2, 3:");
-        System.out.println(intStack);
-
-        // 3) Check if element '6' is in the stack
-        System.out.println("\nDoes the stack contain 6? " + intStack.search(6));
-
-        // Additional operations to demonstrate stack functionality
-        System.out.println("\nCurrent stack size: " + intStack.getSize());
-        System.out.println("Is stack empty? " + intStack.isEmpty());
-        System.out.println("Top element (peek): " + intStack.peek());
-
-        // Pop an element
-        System.out.println("\nPopped element: " + intStack.pop());
-        System.out.println("Stack after pop:");
-        System.out.println(intStack);
-    }
-}
-```
+Answer: as above (part 1(b))
 
 Q2<br>
 Write a new test program for Q1(a) called TestIntMyStack class.  
@@ -157,37 +122,31 @@ b) Push the values 1 through the user entered value onto the stack.
 c) Print the size of the stack.    
 d) Display the contents of the stack by repeatedly calling pop() until the
 stack is empty.  
-What is the output of the elements? What is the order, why?  
+What is the output of the elements? What is the order, why?
+
 ```java
+package week6;
 import java.util.Scanner;
 
 public class TestIntMyStack {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        // a) Prompt user to enter an integer value
-        System.out.print("Enter an integer value: ");
-        int userInput = scanner.nextInt();
-        scanner.close();
-        
-        // Create a stack of type Integer
-        MyStack<Integer> intStack = new MyStack<>();
-        
-        // b) Push values 1 through user entered value onto the stack
-        for (int i = 1; i <= userInput; i++) {
-            intStack.push(i);
+        MyStack<Integer> s1 = new MyStack<Integer>();
+        Scanner sc =new Scanner(System.in);
+
+        System.out.println("Please enter an integer: ");
+        int value = sc.nextInt();
+        for (int i = 1; i <= value; i++) {
+            s1.push(i);
         }
-        
-        // c) Print the size of the stack
-        System.out.println("\nSize of stack: " + intStack.getSize());
-        
-        // d) Display contents by repeatedly calling pop() until stack is empty
-        System.out.println("\nPopping elements from stack:");
-        while (!intStack.isEmpty()) {
-            System.out.print(intStack.pop() + " ");
+
+        System.out.println(s1);
+        System.out.println("The size of the stack is " + s1.getSize());
+        System.out.println("Popping the stack: ");
+        while(!s1.isEmpty()){
+            int intValue = s1.pop();
+            System.out.print(intValue +  " ");
         }
-        
-        System.out.println("\n\nStack is now empty: " + intStack.isEmpty());
+        System.out.println("\n");
     }
 }
 ```
@@ -196,6 +155,7 @@ Q3<br>
 Assuming that an unknown number of positive integers are stored in a stack, S.
 Using only stack ADT operations write an algorithm/function to find the sum of
 every element in S.
+
 ```java
 import java.util.Stack;
 
@@ -240,6 +200,7 @@ A string is a palindrome if it spells the same way forwards and backwards. Write
 Java program that uses a Stack to determine if a string is a palindrome or not. Let
 your string be of maximum size 15 characters. Note however that the actual size
 may be 15 or less.
+
 ```java
 import java.util.Scanner;
 import java.util.Stack;
@@ -247,40 +208,40 @@ import java.util.Stack;
 public class PalindromeChecker {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
+
         System.out.print("Enter a string (max 15 characters): ");
         String input = scanner.nextLine();
-        
+
         // Ensure the input doesn't exceed 15 characters
         if (input.length() > 15) {
             System.out.println("Error: Input exceeds 15 characters.");
             return;
         }
-        
+
         if (isPalindrome(input)) {
             System.out.println("'" + input + "' is a palindrome.");
         } else {
             System.out.println("'" + input + "' is not a palindrome.");
         }
     }
-    
+
     public static boolean isPalindrome(String str) {
         // Remove spaces and convert to lowercase for case-insensitive comparison
         String processedStr = str.replaceAll("\\s+", "").toLowerCase();
         Stack<Character> stack = new Stack<>();
-        
+
         // Push each character onto the stack
         for (int i = 0; i < processedStr.length(); i++) {
             stack.push(processedStr.charAt(i));
         }
-        
+
         // Compare characters from start with those popped from stack
         for (int i = 0; i < processedStr.length(); i++) {
             if (processedStr.charAt(i) != stack.pop()) {
                 return false;
             }
         }
-        
+
         return true;
     }
 }
@@ -308,7 +269,7 @@ import java.util.Stack;
 public class TowerOfHanoi {
     private Stack<Integer>[] rods;
     private int numDisks;
-    
+
     @SuppressWarnings("unchecked")
     public TowerOfHanoi(int disks) {
         numDisks = disks;
@@ -316,50 +277,50 @@ public class TowerOfHanoi {
         for (int i = 0; i < 3; i++) {
             rods[i] = new Stack<Integer>();
         }
-        
+
         // Initialize the first rod with disks (largest at bottom)
         for (int disk = numDisks; disk >= 1; disk--) {
             rods[0].push(disk);
         }
     }
-    
+
     public void solve() {
         moveDisks(numDisks, 0, 2, 1);
     }
-    
+
     private void moveDisks(int n, int fromRod, int toRod, int auxRod) {
         if (n == 1) {
             int disk = rods[fromRod].pop();
             rods[toRod].push(disk);
-            System.out.println("Move disk " + disk + " from rod " + (fromRod+1) + " to rod " + (toRod+1));
+            System.out.println("Move disk " + disk + " from rod " + (fromRod + 1) + " to rod " + (toRod + 1));
             return;
         }
-        
+
         moveDisks(n - 1, fromRod, auxRod, toRod);
-        
+
         int disk = rods[fromRod].pop();
         rods[toRod].push(disk);
-        System.out.println("Move disk " + disk + " from rod " + (fromRod+1) + " to rod " + (toRod+1));
-        
+        System.out.println("Move disk " + disk + " from rod " + (fromRod + 1) + " to rod " + (toRod + 1));
+
         moveDisks(n - 1, auxRod, toRod, fromRod);
     }
-    
+
     public void printRods() {
         for (int i = 0; i < 3; i++) {
-            System.out.println("Rod " + (i+1) + ": " + rods[i]);
+            System.out.println("Rod " + (i + 1) + ": " + rods[i]);
         }
     }
-    
+
     public static void main(String[] args) {
         int numDisks = 3; // Change this value for different number of disks
         TowerOfHanoi tower = new TowerOfHanoi(numDisks);
-        
+
         System.out.println("Initial state:");
         tower.printRods();
-        
+
         System.out.println("\nSolving Tower of Hanoi with " + numDisks + " disks:");
         tower.solve();
-        
+
         System.out.println("\nFinal state:");
         tower.printRods();
     }
