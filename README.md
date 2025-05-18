@@ -14,7 +14,7 @@ Tutorial/Lab Markdown files
 | Stacks                | [Tutorial 05](src/week6/Tutorial05.md)     | [Lab 05](src/week6/Lab05.md)     |
 | Queues                | [Tutorial 06](src/week7/Tutorial06.md)     | [Lab 06](src/week7/Lab06.md)     |
 | Priority Queues       | [Tutorial 06-2](src/week7/Tutorial06-2.md) | N/A                              |
-| Graph                 | N/A                                        | N/A                              |
+| Graph                 | [Tutorial 07](src/week8/Tutorial7.md)      | N/A                              |
 | Recursion             | N/A                                        | N/A                              |
 | Searching and Sorting | N/A                                        | N/A                              |
 | BST                   | N/A                                        | N/A                              |
