@@ -7,11 +7,11 @@ The stack method that returns an element from the stack without removing it is _
     c. peek
     d. spy
 ```
-Answer is C.
+Answer is C.✔️
 
 Question 2
 We have three stacks, s1, s2 and s3, that can contain data of type String. Here are their initial contents:<br>
-###### imagine a picture here  
+![PNG question 2](T5Q2.png)<br>
 As you can see, initially s2 and s3 are empty. Here is a sequence of operations on the three stacks:<br>
 ```text
 s2.push(s1.pop());
@@ -38,6 +38,11 @@ sequence of push() and pop() operations that produces the sequence.<br>
 (c) 3-2-1 
 (d) 1-3-2
 ```
+a) yes: push(1), pop(), push(2), pop(), push(3), pop()<br>
+b) yes: push(1), push(2), pop(), push(3), pop(), pop()<br>
+c) yes: push(1), push(2), push(3), pop(), pop(), pop()<br>
+d) yes: push(1), pop(), push(2), push(3), pop(), pop()<br>
+
 
 Question 4:<br>
 Convert the following infix expressions to postfix:<br>
@@ -46,6 +51,10 @@ a) a + b * c
 b) a * b – c/d
 c) a + (b*c + d)/e
 ```
+Answer:<br>
+a) abc * +<br> 
+b) ab * cd / -<br>
+c) a bc * d + e / +
 
 Question 5:<br>
 Write the following expressions in infix form:<br>
@@ -53,6 +62,9 @@ Write the following expressions in infix form:<br>
 a) a b + c *
 b) a b c + *
 ```
+Answer:<br>
+a) (a + b) * c<br>
+b) a * (b + c)<br>
 
 Question 6:<br>
 Which of the following is an application of stack?<br>
@@ -63,3 +75,5 @@ B. tower of Hanoi
 C. infix to postfix
 D. all of the above
 ```
+
+Answer is D. (all the above)
