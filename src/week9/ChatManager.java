@@ -1,17 +1,17 @@
 package week9;
-// Group Tutorial [Kami Budak DS]
+// Group Tutorial [OCC10 & OCC 11] (Kami Budak DS)
 // Group Members:
-// Student 1 - Dania -- Testcase✅
-// Student 2 - Nabila
-// Student 3 - Ameer & Amri
-// Student 4 - Mariam -- Testcase ✅
-// Student 5 - Kearney
+// Student 1 - Dania (OCC10) -- Testcase✅ - Singly LinkedList
+// Student 2 - Nabilah (OCC11) -- Testcase✅ -Indexed List
+// Student 3 - Ameer & Amri (OCC11) -- Testcase✅ - Doubly LinkedList with Cursor
+// Student 4 - Mariam (OCC11) -- Testcase ✅ - Undo/Redo with Stack
+// Student 5 - Kearney (OCC11) -- ok - Testing
+
 import java.util.Stack;
 
 public class ChatManager {
     // ===== Student 1 =====
-    // [Dania] , OCC10 – Singly Linked List
-
+    // [Dania Batrisyia],OCC10 – Singly Linked List
     static class SinglyLinkedList {
         static class Node {
             String data;
@@ -21,8 +21,8 @@ public class ChatManager {
                 this.data = data;
             }
         }
-        int size = 0;
 
+        int size = 0;
         Node head, tail;
 
         void addFirst(String msg) {
@@ -77,9 +77,6 @@ public class ChatManager {
             if (index == 0) {
                 newNode.next = head;
                 head = newNode;
-                if (tail == null) {
-                    tail = newNode;
-                }
             } else {
                 Node curr = head;
                 for (int i = 0; i < index - 1; i++) {
@@ -87,9 +84,6 @@ public class ChatManager {
                 }
                 newNode.next = curr.next;
                 curr.next = newNode;
-                if (tail == null) {
-                    tail = newNode;
-                }
             }
 
             size++;
@@ -115,36 +109,35 @@ public class ChatManager {
             }
 
             size--;
-            return removed.data;
+            return null;
         }
     }
 
-
     // ===== Student 3 =====
-    // [Ameer] [Amri] , OCC11 – Doubly Linked List with Cursor
+    // [Ameer Zafran] [Amri Amsyar] , OCC11 – Doubly Linked List with Cursor
 
     //static so that we can directly make an instance of it
     //if non-static -> ChatManager.DoublyLinkedList list = manager.new DoublyLinkedList
-    static class DoublyLinkedListWithCursor{
-        static class Node{
+    static class DoublyLinkedListWithCursor {
+        static class Node {
             String data;
-            Node prev,next;
+            Node prev, next;
 
-            Node(String data){
+            Node(String data) {
                 this.data = data;
             }
         }
-        Node head,tail,cursor;
 
-        void insertAtCursor(String msg){
+        Node head, tail, cursor;
+
+        void insertAtCursor(String msg) {
             Node newNode = new Node(msg);
-            if(cursor == null){
+            if (cursor == null) {
                 head = tail = cursor = newNode;
-            }
-            else{
+            } else {
                 newNode.prev = cursor;
                 newNode.next = cursor.next;
-                if(cursor.next != null) {
+                if (cursor.next != null) {
                     cursor.next.prev = newNode;
                 } else {
                     tail = newNode;
@@ -154,19 +147,19 @@ public class ChatManager {
             }
         }
 
-        void moveLeft(){
+        void moveLeft() {
             if (cursor != null && cursor.prev != null) {
                 cursor = cursor.prev;
             }
         }
 
-        void moveRight(){
+        void moveRight() {
             if (cursor != null && cursor.next != null) {
                 cursor = cursor.next;
             }
         }
 
-        void print(){
+        void print() {
             Node current = head;
             while (current != null) {
                 if (current == cursor) {
@@ -242,6 +235,9 @@ public class ChatManager {
         SinglyLinkedListIndexed indexList = new SinglyLinkedListIndexed();
         System.out.println("Test for Indexed List");
 
+        // Add at index 0, for the message daijobu
+        indexList.addAt(0, "Daijobu");
+
         // Add at index 1, for the messsage "I'm fine"
         indexList.addAt(1, "I'm fine");
 
@@ -271,8 +267,11 @@ public class ChatManager {
         // Student 4 [Mariam]: Undo/Redo with Stack
         UndoRedoManager manager = new UndoRedoManager();
         System.out.println("Test for Undo/Redo with Stack");
-        //
+
+        // msg 1
         manager.perform("add:Hi");
+
+        // msg 2
         manager.perform("remove:Bye");
         System.out.println("Undo : " + manager.undo());
         System.out.println("Redo : " + manager.redo());
