@@ -1,15 +1,17 @@
 package week9;
 // Group Tutorial [Kami Budak DS]
 // Group Members:
-// Student 1 - Dania
+// Student 1 - Dania -- Testcase✅
 // Student 2 - Nabila
 // Student 3 - Ameer & Amri
-// Student 4 - Mariam
+// Student 4 - Mariam -- Testcase ✅
 // Student 5 - Kearney
 import java.util.Stack;
 
 public class ChatManager {
-    // Student 1 [Dania] - Singly Linked List
+    // ===== Student 1 =====
+    // [Dania] , OCC10 – Singly Linked List
+
     static class SinglyLinkedList {
         static class Node {
             String data;
@@ -19,6 +21,7 @@ public class ChatManager {
                 this.data = data;
             }
         }
+        int size = 0;
 
         Node head, tail;
 
@@ -61,7 +64,121 @@ public class ChatManager {
         }
     }
 
+    // ===== Student 2 =====
+    // [Nurul Nabilah],OCC11 – Indexed List
+    static class SinglyLinkedListIndexed extends SinglyLinkedList {
+        void addAt(int index, String msg) {
+            if (index < 0 || index > size) {
+                throw new IndexOutOfBoundsException("Invalid index");
+            }
 
+            Node newNode = new Node(msg);
+
+            if (index == 0) {
+                newNode.next = head;
+                head = newNode;
+                if (tail == null) {
+                    tail = newNode;
+                }
+            } else {
+                Node curr = head;
+                for (int i = 0; i < index - 1; i++) {
+                    curr = curr.next;
+                }
+                newNode.next = curr.next;
+                curr.next = newNode;
+                if (tail == null) {
+                    tail = newNode;
+                }
+            }
+
+            size++;
+        }
+
+        String removeAt(int index) {
+            if (index < 0 || index >= size || head == null) {
+                throw new IndexOutOfBoundsException("Invalid index");
+            }
+
+            Node removed;
+
+            if (index == 0) {
+                removed = head;
+                head = head.next;
+            } else {
+                Node curr = head;
+                for (int i = 0; i < index - 1; i++) {
+                    curr = curr.next;
+                }
+                removed = curr.next;
+                curr.next = curr.next.next;
+            }
+
+            size--;
+            return removed.data;
+        }
+    }
+
+
+    // ===== Student 3 =====
+    // [Ameer] [Amri] , OCC11 – Doubly Linked List with Cursor
+
+    //static so that we can directly make an instance of it
+    //if non-static -> ChatManager.DoublyLinkedList list = manager.new DoublyLinkedList
+    static class DoublyLinkedListWithCursor{
+        static class Node{
+            String data;
+            Node prev,next;
+
+            Node(String data){
+                this.data = data;
+            }
+        }
+        Node head,tail,cursor;
+
+        void insertAtCursor(String msg){
+            Node newNode = new Node(msg);
+            if(cursor == null){
+                head = tail = cursor = newNode;
+            }
+            else{
+                newNode.prev = cursor;
+                newNode.next = cursor.next;
+                if(cursor.next != null) {
+                    cursor.next.prev = newNode;
+                } else {
+                    tail = newNode;
+                }
+                cursor.next = newNode;
+                cursor = newNode;
+            }
+        }
+
+        void moveLeft(){
+            if (cursor != null && cursor.prev != null) {
+                cursor = cursor.prev;
+            }
+        }
+
+        void moveRight(){
+            if (cursor != null && cursor.next != null) {
+                cursor = cursor.next;
+            }
+        }
+
+        void print(){
+            Node current = head;
+            while (current != null) {
+                if (current == cursor) {
+                    System.out.print("[" + current.data + "] <-> ");
+                } else {
+                    System.out.print(current.data + " <-> ");
+                }
+                current = current.next;
+            }
+            System.out.println("null");
+        }
+    }
 
     // ===== Student 4 =====
     // [Mariam Shazlinda] , OCC11 – Undo/Redo with Stack
@@ -101,7 +218,8 @@ public class ChatManager {
     }
 
 
-
+    // ===== Student 5 =====
+    // [Kearney] , OCC11 – Testing
     public static void main(String[] args) { // Testing by Student 5 [Kearney]
         // Student 1 [Dania]:  Singly linked list
         SinglyLinkedList list = new SinglyLinkedList();
@@ -120,8 +238,8 @@ public class ChatManager {
         // Print list
         list.print();
 
-        /*// Student 2 [Nabilah]: Indexed List
-        SinglyLinkedListIndexed indexList = new SinglyLinkedListIndex();
+        // Student 2 [Nabilah]: Indexed List
+        SinglyLinkedListIndexed indexList = new SinglyLinkedListIndexed();
         System.out.println("Test for Indexed List");
 
         // Add at index 1, for the messsage "I'm fine"
@@ -148,7 +266,8 @@ public class ChatManager {
 
         // Print all history
         history.print(); // expected output: Hi <-> [Wait] <-> Bye <-> null
-*/
+
+
         // Student 4 [Mariam]: Undo/Redo with Stack
         UndoRedoManager manager = new UndoRedoManager();
         System.out.println("Test for Undo/Redo with Stack");
