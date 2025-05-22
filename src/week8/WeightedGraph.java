@@ -4,12 +4,10 @@ import java.util.List;
 public class WeightedGraph {
     protected List<List<Edge>> neighbors;
 
-
     public boolean addEdge(int u, int v, double weight) {
         neighbors.get(u).add(new Edge(u, v, weight));
         return true;
     }
-
 
     public boolean addUndirectedEdge(int u, int v, double weight) {
         boolean added1 = addEdge(u, v, weight);
@@ -33,6 +31,4 @@ public class WeightedGraph {
         boolean removed2 = removeEdge(v, u);
         return removed1 && removed2;
     }
-
-
 }
