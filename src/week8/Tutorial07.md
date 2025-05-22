@@ -1,6 +1,6 @@
 **<ins>Tutorial: Graph</ins>**
 
-1. Write an adjacency matrix and an adjacency list for the following graph.
+1. Write an adjacency matrix and an adjacency list for the following graph12.
 
 ![pic_Q1](T7_Q1.png)
 
@@ -32,14 +32,14 @@ H : I
 I : (none)
 ```
 
-2. Represent the graph in question 1 using a 2 dimensional array. You use the adjacency matrix or the adjacency list for this purpose?
+2. Represent the graph12 in question 1 using a 2 dimensional array. You use the adjacency matrix or the adjacency list for this purpose?
 ```java
 package week8;
 
 // Use Adjacency Matrix because its conveniently 2D array.
 public class GraphMatrix{
     public static void main(String[] args) {
-        int [][] graph ={
+        int [][] graph12 ={
                 {0,0,1,1,0,0,0,0,0}, // A
                 {0,0,0,1,0,0,0,0,0}, // B
                 {0,0,0,0,1,1,0,0,0}, // C
@@ -51,7 +51,7 @@ public class GraphMatrix{
                 {0,0,0,0,0,0,0,0,0}, // I
         };
 
-        printGraph(graph);
+        printGraph(graph12);
     }
 
     private static void printGraph(int[][] arr){
@@ -65,7 +65,7 @@ public class GraphMatrix{
 }
 ```
 
-3. Write code to create the graph using linked-list representation. You use the adjacency matrix or the adjacency list for this purpose?<br>
+3. Write code to create the graph12 using linked-list representation. You use the adjacency matrix or the adjacency list for this purpose?<br>
 Use adjacency list because linked-list.
 
 ```java
