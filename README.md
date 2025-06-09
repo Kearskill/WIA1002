@@ -16,7 +16,7 @@ Tutorial/Lab Markdown files
 | Priority Queues       | [Tutorial 06-2](src/week7/Tutorial06-2.md) | N/A                              |
 | Graph                 | [Tutorial 07](src/week8/Tutorial07)        | [Lab 07](src/week8/Lab07.md)     |
 | Recursion             | N/A                                        | N/A                              |
-| Searching and Sorting | [Tutorial 08](src/week11/Tutorial09.md)    | N/A                              |
+| Searching and Sorting | [Tutorial 09](src/week11/Tutorial09.md)    | N/A                              |
 | BST                   | N/A                                        | N/A                              |
 
 <mark style="background-color: lightblue">Marked text</mark>

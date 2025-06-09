@@ -57,3 +57,12 @@ public class BinarySearch {
     }
 }
 ```
+
+2. Describe the technique for each sort algorithm below. Given the following list:<br>
+   `90 8 7 56 125 237 9 1 653`<br>
+   Show a trace of execution for:<br>
+   a. Selection sort<br>
+   b. Insertion sort<br>
+   c. Bubble sort<br>
+   d. Merge sort<br>
+3. 
