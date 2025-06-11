@@ -17,7 +17,7 @@ Tutorial/Lab Markdown files
 | Graph                 | [Tutorial 07](src/week8/Tutorial07)        | [Lab 07](src/week8/Lab07.md)     |
 | Recursion             | N/A                                        | N/A                              |
 | Searching and Sorting | [Tutorial 09](src/week11/Tutorial09.md)    | N/A                              |
-| BST                   | N/A                                        | N/A                              |
+| BST                   | [Tutorial 10](src/week12/Tutorial10.md)    | N/A                              |
 
 <mark style="background-color: lightblue">Marked text</mark>
 
