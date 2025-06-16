@@ -2,3 +2,17 @@
 ChatGPT prompt:
 5. how to i get split an input in java, ruby code :input_a, input_b = gets.split.map(&:to_i)
 5. give error if wrong format
+5. Name: Liew Wei Shiung
+   Matric ID: WHA10061
+   Street 1: 123, Level 4, Apartment FiveSixSeven
+   Street 2: Jalan Lapan
+   City: Petaling Jaya
+   District: Petaling
+   State: Selangor
+   Postcode: 47800
+   Programme: Artificial Intelligence
+   CGPA: 2.80
+
+   need like all these columns
+
+5.
