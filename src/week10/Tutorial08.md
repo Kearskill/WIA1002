@@ -1,6 +1,6 @@
 Tutorial 2: Recursion (Fundamental)
 
-3. Explain the problem that occurs when executing the recursive method f(0).
+1. Explain the problem that occurs when executing the recursive method f(0).
    public static int f(int n) {
 ``` java
 if (n == 1){
@@ -19,12 +19,14 @@ if (n == 1){
    programs that may be running.) The exception is labeled a StackOverflowError
 
 2. Explain the problem that occurs when executing the recursive method f().
-   public static int f(int n) {
+```java
+public static int f(int n) {
    if (n == 0)
-   return n;
+      return n;
    else
-   return f(n+1) + n;
-   }
+      return f(n + 1) + n;
+}
+```
 3. Write a recursive method to reverse a string.
    String → gnirts
 4. Write a recursive method to calculate the following :

@@ -1,0 +1,4 @@
+
+ChatGPT prompt:
+5. how to i get split an input in java, ruby code :input_a, input_b = gets.split.map(&:to_i)
+5. give error if wrong format
