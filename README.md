@@ -19,5 +19,16 @@ Tutorial/Lab Markdown files
 | Searching and Sorting | [Tutorial 09✅](src/week11/Tutorial09.md)    | [Lab 09](src/week11/Lab09.md)    |
 | BST                   | [Tutorial 10✅](src/week12/Tutorial10.md)     | [Lab 10✅](src/week12/Lab10.md)   |
 
+| Past Years | Link                                           |
+|------------|------------------------------------------------|
+| 2016       | [paper 2016](src/pastyears/paper2016/paper.md) |
+| 2017       | [paper 2017](src/pastyears/paper2017/paper.md) |
+| 2018       | [paper 2018](src/pastyears/paper2018/paper.md) |
+| 2020       | [paper 2020](src/pastyears/paper2020/paper.md) |
+| 2023       | [paper 2023](src/pastyears/paper2023/paper.md) |
+
+
+
 <mark style="background-color: lightblue">Marked text</mark>
+
 
