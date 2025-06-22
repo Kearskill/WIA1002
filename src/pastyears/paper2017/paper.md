@@ -1,0 +1,232 @@
+**<ins>June 2017, 3 hours 30 minutes, attempted by Leith</ins>**
+
+QUESTION 1<br>
+Write a program to create a (singly) linked list using a class called LinkedList, where an
+example of the output for the test program is as follows:
+
+run:
+```text
+Displaying the Linked List *************************************
+Louis Vuitton: 10,000,000 Sold
+Chanel: 100,000,000 Sold
+Prada: 1,000,000 Sold
+Tods: 500,000,000 Sold
+
+Adding Coach after Chanel
+Found Chanel which is handbag number 2 in linked list
+
+Displaying the Linked List *************************************
+Louis Vuitton: 10,000,000 Sold
+Chanel: 100,000,000 Sold
+Coach: 10,000,000 Sold
+Prada: 1,000,000 Sold
+Tods: 500,000,000 Sold
+
+Adding Mulberry after Coach
+Found Coach which is handbag number 3 in the linked list
+
+Displaying the Linked List *************************************
+Louis Vuitton: 10,000,000 Sold
+Chanel: 100,000,000 Sold
+Coach: 10,000,000 Sold
+Mulberry: 90,000,000 Sold
+Prada: 1.000,000 Sold
+Tods: 500,000,000 Sold
+
+Removing Chanel..
+Found a match.. Chanel is handbag number 2 in the linked list
+
+Displaying the Linked List *************************************
+Louis Vuitton: 10,000,000 Sold
+Coach: 10,000,000 Sold
+Mulberry: 90,000,000 Sold
+Prada: 1,000,000 Sold
+Tods: 500,000,000 Sold
+
+Removing Coach..
+Found a match.. Coach is handbag number 2 in the linked list
+
+Displaying the Linked List *************************************
+Louis Vuitton: 10,000,000 Sold
+Mulberry: 90,000,000 Sold
+Prada: 1,000,000 Sold
+Tods: 500,000,000 Sold
+
+BUILD SUCCESSFUL (total time: 0 seconds)
+```
+
+Your program requires the following methods:<br>
+i)<br>
+Method insertFirstLinked(String, int) to insert a new element into the linked list. [2 marks]
+
+ii)<br>
+Method addAfter(String, String, int) to insert a new element after a particular element in the linked list. [4 marks]
+
+iii)<br>
+Method removeLink(String) to delete any element in the linked list. [4 marks]
+
+iv) <br>
+Method display() to display all the contents of the linked list. [2 marks]
+
+* No marks will be given for any implementation using the existing LinkedList class or any other Collection
+class available from the Java API Library.
+
+
+
+QUESTION 2<br>
+Imagine a pile of books on your desk. Each book is so large and heavy, and you can only
+remove the top one from the pile. You cannot remove a book from under another one.
+Likewise, you can add another book to the pile only by placing it on the top of the pile.
+You cannot add a book beneath one another and can only remove the pile's top book.
+
+Considering all the given information above.
+
+a) <br>
+Design a stack interface, StackInterface<E> that you can use to specify common
+methods for any stack object that implements this interface. The interface should
+specify the following common attribute and methods:  
+* An attribute that is an ArrayList to store the elements in this stack.
+* A constructor that creates an empty stack.
+* A method that returns the number of elements in this stack.
+* A method that returns the top element in this stack.
+* A method that returns and removes the top element in this stack.
+* A method that adds a new element to the top of this stack.
+* A method that returns true if the stack is empty. [2 marks]
+
+
+b) <br>
+If you represent books by their titles, design a stack generic class, GenericStack<E>
+that implement the StackiInterface<E>, you can use it to track the books in the pile on
+your desk. Implement the methods using ArrayList. This class should override the
+Java toString method to return the list of elements in this stack. [7 marks]
+
+
+c) <br>
+Write a test program, TestPileStack that demonstrates your implementation. An
+example of the output for the test program is as follows: [2 marks]
+
+```text
+Create a new stack: an empty pile of books
+isEmpty() returns true
+
+Push 3 books to the pile:
+Enter book title 1: The Hobbit
+Enter book title 2: The Lord of the Rings
+Enter book title 3: The Da Vinci Code
+
+The new books that you added are: [The Hobbit, The Lord of the Rings, The Da Vinci
+Code]
+
+The pile should not be empty:
+isEmpty() returns false
+The pile has 3 books.
+
+Get the top book and remove the top book:
+
+The Da Vinci Code is at the top of the pile.
+The Da Vinci Code is removed from the pile.
+
+The Lord of the Rings is at the top of the pile.
+The Lord of the Rings is removed from the pile.
+
+The Hobbit is at the top of the pile.
+The Hobbit is removed from the pile.
+
+The pile should be empty:
+isEmpty() returns true
+```
+
+QUESTION 3<br>
+Write a code for the following methods to be implemented in a generic binary search tree class type E.  
+i)<br>
+Method `public boolean add(Node<E> node, E item)` to add new item type E into the
+binary search tree. The method should return a boolean value: `true` if the insertion is successful, and false if
+it is a duplicated item. [3 marks]
+
+ii) <br>
+Method `public void printTreeInOrder()` to print all the tree items in "`in order`" iteratively (non-recursive). [4 marks]
+
+iii) <br>
+Method `public boolean contains(E item)` to check if the binary search tree contains a specified item. The method should return `boolean` value: `true` 
+if the item is found, otherwise return `false`. [3 marks]
+
+
+QUESTION 4<br>
+Write a program to accept numbers and encode them to return their corresponding word by using queue.
+
+Your program shall demonstrate the following:
+
+a)<br>
+Implement a Queue<E> class. Ensure that the following methods and constructors
+are implemented. [8 marks]
+
+i) `public Queue (E[] items)`
+ii) `public Queue ()`
+iii) `public void enqueue (E e)`
+iv) `public E dequeue ()`
+v) `public E getElement (int i)`
+vi) `public int getSize()`
+vii) `public boolean isEmpty()`
+viii) `public String toString()`
+
+b)<br>
+The program uses the Queue<E> class implemented in Question 4(a). Following are further hints to guide the program
+development:
+
+i)<br>
+A list of alphabets (i.e., a - z) is given as an array as follows. Store this array of
+alphabets in the queue implemented in Question 4(a). There are 26 characters in
+total. [9 marks]
+
+```text
+alphabet = ('a', 'b,'c,..'y','z')
+```
+
+ii)<br>
+The index (see example output) represents the index location of the alphabets
+and not given as a separate array.
+
+iii)<br>
+The program interacts with the user by asking the frequency of input numbers to
+be provided.
+
+iv)<br>
+Once the user enters all the numbers, the program will display their
+corresponding alphabets.
+
+Following are examples of the output. The bolded texts (`**texts**`) are the user input.
+
+Example Output 1:
+```text
+Queue: [a, b, c, d, e, f, g, h, i, j, k, I, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
+Index: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
+26]
+How many times will you enter a number: **0**
+(Please enter your number(s) between 0-26.)
+The entered numbers are[]
+The deciphered values are -Cannot decipher. No value was entered.-
+```
+
+Example Output 2:
+```text
+Queue: [a, b, c, d, e, f, g, h, i, j, k, I, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
+Index: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
+26]
+How many times will you enter a number: **13**
+(Please enter your number(s) between 0-26.)
+Enter number 1 >> **3**
+Enter number 2 >> **0**
+Enter number 3 >> **19**
+Enter number 4 >> **0**
+Enter number 5 >> **18**
+Enter number 6 >> **19**
+Enter number 7 >> **17**
+Enter number 8 >> **20**
+Enter number 9 >> **2**
+Enter number 10 >> **19**
+Enter number 11 >> **20**
+Enter number 12 >> **17**
+Enter number 13 >> **4**
+The entered numbers are [3, 0, 19, 0, 18, 19, 17, 20, 2, 19, 20, 17, 4]
+The deciphered values are datastructure
+```
