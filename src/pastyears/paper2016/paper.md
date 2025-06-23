@@ -420,8 +420,6 @@ Figure 5
 ```java
 package pastyears.paper2016;
 
-import java.util.regex.Pattern;
-
 public class LinkedList {
     private static class Node{
         int data;
