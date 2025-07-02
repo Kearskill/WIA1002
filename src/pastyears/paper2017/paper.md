@@ -433,7 +433,7 @@ public boolean contains(E item) {
     while (current != null) {
         int cmp = item.compareTo(current.data);
         if (cmp == 0) {
-            return true
+            return true;
         } else if (cmp < 0) {
             current = current.left;
         } else {
@@ -491,6 +491,64 @@ v) `public E getElement (int i)`<br>
 vi) `public int getSize()`<br>
 vii) `public boolean isEmpty()`<br>
 viii) `public String toString()`<br>
+
+```java
+package pastyears.paper2017;
+import java.util.ArrayList;
+
+public class Queue<E> {
+    private ArrayList<E> list;
+
+//    i)
+    public Queue (E[] items){
+        list = new ArrayList<>();
+        for (E item: items){
+            list.add(item);
+        }
+    }
+
+//    ii)
+    public Queue (){
+        list = new ArrayList<>();
+    }
+
+//    iii)
+    public void enqueue (E e){
+        list.add(e);
+    }
+
+//    iv)
+    public E dequeue (){
+        if (!isEmpty()){
+            return list.remove(0);
+        }
+        return null;
+    }
+
+//    v)
+    public E getElement (int i){
+        if (i>=0 && i< list.size()){
+            return list.get(i);
+        }
+        return null;
+    }
+
+//    vi)
+    public int getSize(){
+        return list.size();
+    }
+
+//    vii)
+    public boolean isEmpty(){
+        return list.isEmpty();
+    }
+
+//    viii)
+    public String toString(){
+        return list.toString();
+    }
+}
+```
 
 b)<br>
 The program uses the Queue<E> class implemented in Question 4(a). Following are further hints to guide the program
@@ -552,4 +610,128 @@ Enter number 12 >> **17**
 Enter number 13 >> **4**
 The entered numbers are [3, 0, 19, 0, 18, 19, 17, 20, 2, 19, 20, 17, 4]
 The deciphered values are datastructure
+```
+
+Queue.java👇
+
+```java
+package pastyears.paper2017;
+import java.util.ArrayList;
+
+public class Queue<E> {
+    private ArrayList<E> list;
+
+//    i)
+    public Queue (E[] items){
+        list = new ArrayList<>();
+        for (E item: items){
+            list.add(item);
+        }
+    }
+
+//    ii)
+    public Queue (){
+        list = new ArrayList<>();
+    }
+
+//    iii)
+    public void enqueue (E e){
+        list.add(e);
+    }
+
+//    iv)
+    public E dequeue (){
+        if (!isEmpty()){
+            return list.remove(0);
+        }
+        return null;
+    }
+
+//    v)
+    public E getElement (int i){
+        if (i>=0 && i< list.size()){
+            return list.get(i);
+        }
+        return null;
+    }
+
+//    vi)
+    public int getSize(){
+        return list.size();
+    }
+
+//    vii)
+    public boolean isEmpty(){
+        return list.isEmpty();
+    }
+
+//    viii)
+    public String toString(){
+        return list.toString();
+    }
+}
+```
+
+AlphabetEncoder.java 👇
+```java
+package pastyears.paper2017;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class AlphabetEncoder {
+    public static void main(String[] args) {
+        Character[] alphabetArray = new Character[26];
+
+        for (int i = 0; i < 26; i++) {
+            alphabetArray[i] = (char) ('a' + i);
+        }
+
+        Queue<Character> alphabetQueue = new Queue<>(alphabetArray);
+
+        System.out.println("Queue: "+ alphabetQueue);
+
+        System.out.print("Index: [");
+        for (int i = 0; i < 26; i++) {
+            System.out.print(i);
+            if (i<25) System.out.print(", ");
+        }
+        System.out.println("]");
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("How many times will you enter a number: ");
+        int n = sc.nextInt();
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        if (n==0){ // weird edge case
+            System.out.println("(Please enter your number(s) between 0-26.)");
+            System.out.println("The entered numbers are " + numbers);
+            System.out.println("The deciphered values are -Cannot decipher. No value was entered.-");
+            return;
+        }
+
+        System.out.println("(Please enter your number(s) between 0-26.)");
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter number " + (i + 1) + " >> ");
+            int num = sc.nextInt();
+            numbers.add(num);
+        }
+
+        // Display entered numbers
+        System.out.println("The entered numbers are " + numbers);
+
+        // iv) Decipher values
+        StringBuilder result = new StringBuilder();
+        for (int index : numbers) {
+            if (index >= 0 && index < alphabetQueue.getSize()) {
+                result.append(alphabetQueue.getElement(index));
+            } else {
+                result.append('?'); // invalid index
+            }
+        }
+
+        System.out.println("The deciphered values are " + result.toString());
+    }
+}
 ```
