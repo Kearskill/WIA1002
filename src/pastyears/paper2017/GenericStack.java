@@ -2,8 +2,8 @@ package pastyears.paper2017;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class GenericStack<T> implements StackInterface<T>{
-    private ArrayList<T> stack;
+public class GenericStack<E> implements StackInterface<E>{
+    private ArrayList<E> stack;
 
     public GenericStack(){
         stack = new ArrayList<>();
@@ -13,21 +13,21 @@ public class GenericStack<T> implements StackInterface<T>{
         return stack.size();
     }
 
-    public T peek(){
+    public E peek(){
         if(!isEmpty()){
             return stack.get(stack.size() - 1);
         }
         return null;
     }
 
-    public T pop(){
+    public E pop(){
         if(!isEmpty()){
             return stack.remove(stack.size() - 1);
         }
         return null;
     }
 
-    public void push(T element){
+    public void push(E element){
         stack.add(element);
     }
 
