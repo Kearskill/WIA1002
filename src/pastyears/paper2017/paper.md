@@ -361,14 +361,119 @@ Method `public boolean add(Node<E> node, E item)` to add new item type E into th
 binary search tree. The method should return a boolean value: `true` if the insertion is successful, and false if
 it is a duplicated item. [3 marks]
 
+```java
+    public boolean add(Node<E> node, E item) {
+    if (node == null) {
+        root = new Node<>(item);
+        return true;
+    }
+
+    Node<E> current = node; // this is the head
+    while (1 + 2 == 3) {
+        int cmp = item.compareTo(current.data);
+        if (cmp == 0) {
+            return false;
+        } else if (cmp < 0) {
+            if (current.left == null) {
+                current.left = new Node<>(item);
+                return true;
+            }
+            current = current.left;
+        } else {
+            if (current.right == null) {
+                current.right = new Node<>(item);
+                return true;
+            }
+            current = current.right;
+        }
+    }
+}
+
+public boolean add(E item) {
+    if (root == null) {
+        root = new Node<>(item);
+        return true;
+    }
+    return add(root, item);
+}
+```
+
+
 ii) <br>
 Method `public void printTreeInOrder()` to print all the tree items in "`in order`" iteratively (non-recursive). [4 marks]
+
+```java
+public void printTreeInOrder() {
+    Stack<Node<E>> stack = new Stack<>();
+    Node<E> current = root;
+
+    while (current != null || !stack.isEmpty()) {
+        while (current != null) {
+            stack.push(current);
+            current = current.left;
+        }
+
+        current = stack.pop();
+        System.out.print(current.data + " ");
+        current = current.right;
+    }
+    System.out.println();
+}
+```
+
 
 iii) <br>
 Method `public boolean contains(E item)` to check if the binary search tree contains a specified item. The method should return `boolean` value: `true` 
 if the item is found, otherwise return `false`. [3 marks]
 
+```java
+public boolean contains(E item) {
+    Node<E> current = root;
 
+    while (current != null) {
+        int cmp = item.compareTo(current.data);
+        if (cmp == 0) {
+            return true
+        } else if (cmp < 0) {
+            current = current.left;
+        } else {
+            current = current.right;
+        }
+    }
+    return false;
+}
+```
+
+The Node class:
+```java
+private static class Node<E>{
+    E data;
+    Node<E> left, right;
+    public Node(E data){
+        this.data = data;
+        left = null;
+        right = null;
+    }
+}
+```
+
+The demo file:
+```java
+public static void main(String[] args) {
+    GenericBST<Integer> bst = new GenericBST<>();
+
+    bst.add(50);
+    bst.add(30);
+    bst.add(70);
+    bst.add(20);
+    bst.add(40);
+
+    bst.printTreeInOrder();
+
+    System.out.println(bst.contains(50));
+    System.out.println(bst.contains(727));
+}
+```
 QUESTION 4<br>
 Write a program to accept numbers and encode them to return their corresponding word by using queue.
 
@@ -378,14 +483,14 @@ a)<br>
 Implement a Queue<E> class. Ensure that the following methods and constructors
 are implemented. [8 marks]
 
-i) `public Queue (E[] items)`
-ii) `public Queue ()`
-iii) `public void enqueue (E e)`
-iv) `public E dequeue ()`
-v) `public E getElement (int i)`
-vi) `public int getSize()`
-vii) `public boolean isEmpty()`
-viii) `public String toString()`
+i) `public Queue (E[] items)`<br>
+ii) `public Queue ()`<br>
+iii) `public void enqueue (E e)`<br>
+iv) `public E dequeue ()`<br>
+v) `public E getElement (int i)`<br>
+vi) `public int getSize()`<br>
+vii) `public boolean isEmpty()`<br>
+viii) `public String toString()`<br>
 
 b)<br>
 The program uses the Queue<E> class implemented in Question 4(a). Following are further hints to guide the program

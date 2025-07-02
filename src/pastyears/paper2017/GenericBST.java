@@ -1,6 +1,5 @@
 package pastyears.paper2017;
 import java.util.Stack;
-import java.util.regex.Pattern;
 
 public class GenericBST <E extends Comparable<E>> {
     private static class Node<E>{
@@ -44,5 +43,61 @@ public class GenericBST <E extends Comparable<E>> {
                 current = current.right;
             }
         }
+    }
+
+    public boolean add(E item){
+        if (root == null){
+            root = new Node<>(item);
+            return true;
+        }
+        return add(root,item);
+    }
+
+    public void printTreeInOrder(){
+        Stack<Node<E>> stack = new Stack<>();
+        Node<E> current = root;
+
+        while(current != null || !stack.isEmpty()){
+            while(current != null){
+                stack.push(current);
+                current = current.left;
+            }
+
+            current = stack.pop();
+            System.out.print(current.data + " ");
+            current = current.right;
+        }
+        System.out.println();
+    }
+
+    public boolean contains(E item){
+        Node<E> current = root;
+
+        while( current!= null) {
+            int cmp = item.compareTo(current.data);
+            if (cmp == 0){
+                return true;
+            } else if (cmp <0){
+                current = current.left;
+            } else{
+                current = current.right;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        GenericBST<Integer> bst = new GenericBST<>();
+
+        bst.add(50);
+        bst.add(30);
+        bst.add(70);
+        bst.add(20);
+        bst.add(40);
+
+        bst.printTreeInOrder();
+
+        System.out.println(bst.contains(50));
+        System.out.println(bst.contains(727));
     }
 }
