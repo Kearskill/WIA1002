@@ -673,6 +673,7 @@ public class Queue<E> {
 ```
 
 AlphabetEncoder.java 👇
+
 ```java
 package pastyears.paper2017;
 
