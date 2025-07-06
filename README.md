@@ -2,7 +2,7 @@
 
 my hw sem2 fsktm
 
-Tutorial/Lab Markdown files
+## Tutorial/Lab Markdown files
 
 | Topic                 | Tutorial                                    | Lab                              |
 |-----------------------|---------------------------------------------|----------------------------------|
@@ -19,6 +19,9 @@ Tutorial/Lab Markdown files
 | Searching and Sorting | [Tutorial 09✅](src/week11/Tutorial09.md)    | [Lab 09](src/week11/Lab09.md)    |
 | BST                   | [Tutorial 10✅](src/week12/Tutorial10.md)     | [Lab 10✅](src/week12/Lab10.md)   |
 
+
+## Past Years Markdown Files
+
 | Past Years | Link                                           |
 |------------|------------------------------------------------|
 | 2016       | [paper 2016](src/pastyears/paper2016/paper.md) |
@@ -28,7 +31,14 @@ Tutorial/Lab Markdown files
 | 2023       | [paper 2023](src/pastyears/paper2023/paper.md) |
 
 
+What do we know about 2024/2025 WIA1002 exams:<br>
+- Linked list - doubly linked list
+- Queue - circular
+- Search and sort - binary search (sort cannot give specific)
+-  Graph
 
 <mark style="background-color: lightblue">Marked text</mark>
 
+sybau twin<br>
+ts pmo sm<br>
 
