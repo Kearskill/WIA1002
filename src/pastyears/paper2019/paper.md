@@ -21,9 +21,11 @@ Table 1: List of method names and their specification
 Write your main() method in the same program file. Your main() method should follow the suggestion shown in 
 Figure 1(a). Modify and test your methods so you get the same output shown in Figure 1(b).
 
-#### insert figure 1a
+![](figure001.png)
 
-#### insert figure 1b
+![](figure002.png)
+
+![](figure003.png)
 
 - No marks will be given for any implementation using the existing Stack class or any 
 other Collection classes available from the Java API Library.
@@ -51,9 +53,9 @@ Write your main() method in the same program file. Your main() method should fol
 the suggestion shown in Figure 2(a). Modify and test your methods so you get the same output
 shown in Figure 2(b).
 
-#### insert figure 2a
+![](figure004.png)
 
-#### insert figure 2b
+![](figure005.png)
 
 - No marks will be given for any implementation using the existing Queue class or any other
 Collection classes available from the Java API Library.
@@ -78,10 +80,31 @@ Table 3: List of method names and their specification
 Write your main() method in the same program file. Your main() method should follow the suggestion shown
 in Figure 3(a). Modify and test your methods so you get the same output shown in Figure 3(b).
 
-#### insert figure 3(a)
+![](figure006.png)
 
-#### insert figure 3(b)
+![](figure007.png)
 
 - No marks will be given for any implementation using the existing Linked List class or any other Collection classes available from the Java API Library.
 
 QUESTION 4 [8 marks] <br>
+
+HashMap is a structure that stores data in the form of Key and value pairs. Write a program 
+to implement HashMap. Your program must contain the following methods.
+
+Table 4: List of method names and their specification
+
+| Constructor/Method name              | Specification                                                                                                                          |
+|--------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| i) Constructor for the HashMap class | Default constructor which accepts Key and value pair parameters                                                                        |
+| ii) get                              | Return the entry mapped to key in the HashMap                                                                                          |
+| iii) put                             | Add new entry if Key is not yet mapped into the HashMap. Otherwise, update entry mapped to Key if the HashMap already contains the Key |
+
+Write your main() method in the same program file. Your main() method should follow the suggestion shown in Figure 4(a). Modify
+and test your methods so you get the same output shown in Figure 4(b).
+
+![](figure008.png)
+
+![](figure009.png)
+
+- No marks will be given for any implementation using the existing HashMap class or
+any other Collection classes available from the Java API Library. 
