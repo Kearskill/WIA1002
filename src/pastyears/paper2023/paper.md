@@ -5,7 +5,32 @@ a generic stack class. This class should have 4 methods only, i.e.
 peep, pop, push and getSize.
 
 ```java
+package pastyears.paper2023;
+import java.util.LinkedList;
 
+public class ExamStack <E>{
+    public LinkedList<E> stack;
+
+    public ExamStack(){
+        this.stack = new LinkedList<E>();
+    }
+
+    public E peep(){
+        return stack.getFirst();
+    }
+
+    public E pop(){
+        return stack.removeFirst();
+    }
+
+    public void push(E e){
+        stack.addFirst(e);
+    }
+
+    public int getSize(){
+        return stack.size();
+    }
+}
 ```
 
 QUESTION 2 [12 marks]<br>
@@ -32,6 +57,9 @@ Sample inputs and outputs of the program are given below.
 
 ![sample output](figure000.png)
 
+```java
+
+```
 
 QUESTION 3 [25 marks]<br>
 A family book (`family_book.csv`) is a table that contains the names of all people in the

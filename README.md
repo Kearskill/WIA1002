@@ -31,6 +31,7 @@ my hw sem2 fsktm
 | 2020       | [paper 2020](src/pastyears/paper2020/paper.md)  |
 | 2023       | [paper 2023](src/pastyears/paper2023/paper.md)  |
 
+nah twin why is paper 2023 as hard as umamutsume, this learning curve too much
 
 What do we know about 2024/2025 WIA1002 exams:<br>
 - Linked list - doubly linked list
