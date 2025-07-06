@@ -22,13 +22,14 @@ my hw sem2 fsktm
 
 ## Past Years Markdown Files
 
-| Past Years | Link                                           |
-|------------|------------------------------------------------|
-| 2016       | [paper 2016](src/pastyears/paper2016/paper.md) |
-| 2017       | [paper 2017](src/pastyears/paper2017/paper.md) |
-| 2018       | [paper 2018](src/pastyears/paper2018/paper.md) |
-| 2020       | [paper 2020](src/pastyears/paper2020/paper.md) |
-| 2023       | [paper 2023](src/pastyears/paper2023/paper.md) |
+| Past Years | Link                                            |
+|------------|-------------------------------------------------|
+| 2016       | [paper 2016✅](src/pastyears/paper2016/paper.md) |
+| 2017       | [paper 2017✅](src/pastyears/paper2017/paper.md) |
+| 2018       | [paper 2018](src/pastyears/paper2018/paper.md)  |
+|2019   | [paper 2019](src/pastyears/paper2019/paper.md)  |
+| 2020       | [paper 2020](src/pastyears/paper2020/paper.md)  |
+| 2023       | [paper 2023](src/pastyears/paper2023/paper.md)  |
 
 
 What do we know about 2024/2025 WIA1002 exams:<br>

@@ -1,4 +1,4 @@
-**<ins>July 2023 Paper, 3 hours</ins>**
+**<ins>July 2023 Paper, 3 hours, attempted by Leith</ins>**<br>
 QUESTION 1 [3 marks]<br>
 Based on the Java library java.util.LinkedList; develop ExamStack,
 a generic stack class. This class should have 4 methods only, i.e.

@@ -32,5 +32,6 @@ bin/
 src/pastyears/paper2016/*.pdf
 src/pastyears/paper2017/*.pdf
 src/pastyears/paper2018/*.pdf
+src/pastyears/paper2019/*.pdf
 src/pastyears/paper2020/*.pdf
 src/pastyears/paper2023/*.pdf
